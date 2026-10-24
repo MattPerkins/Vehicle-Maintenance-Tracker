@@ -1,4 +1,5 @@
 <?php
+// Dashboard summary for the currently authenticated user.
 require 'includes/auth.php';
 require_login();
 require 'config/db.php';
@@ -19,6 +20,6 @@ require 'includes/header.php';
 <section class="grid">
     <div class="card"><div class="stat"><?= $vehicleCount ?></div><strong>Vehicles</strong><p><a href="vehicles.php">View vehicle list</a></p></div>
     <div class="card"><div class="stat"><?= $maintenanceCount ?></div><strong>Maintenance Records</strong><p><a href="maintenance.php">View maintenance history</a></p></div>
-    <div class="card"><h3>Phase 1 Status</h3><p>Database connection, login, navigation, and core project pages are in place.</p></div>
+    <div class="card"><h3>Phase 2 Status</h3><p>Search, registration, password changes, password complexity, and additional security checks are now included.</p><p><a href="search.php">Try the search feature</a></p></div>
 </section>
 <?php require 'includes/footer.php'; ?>

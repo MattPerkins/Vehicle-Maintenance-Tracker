@@ -1,4 +1,5 @@
 <?php
+// Database-backed login using hashed passwords and a prepared statement.
 session_start();
 if (!empty($_SESSION['user_id'])) {
     header('Location: dashboard.php');
@@ -8,7 +9,7 @@ require 'config/db.php';
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = trim($_POST['email'] ?? '');
+    $email = strtolower(trim($_POST['email'] ?? ''));
     $password = $_POST['password'] ?? '';
 
     if ($email === '' || $password === '') {
@@ -19,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user = $stmt->fetch();
 
         if ($user && password_verify($password, $user['password_hash'])) {
+            // Regenerate the session ID after login to reduce session-fixation risk.
             session_regenerate_id(true);
             $_SESSION['user_id'] = (int)$user['id'];
             $_SESSION['user_name'] = $user['first_name'] . ' ' . $user['last_name'];
@@ -34,7 +36,7 @@ require 'includes/header.php';
 ?>
 <section class="card form-card">
     <h1>Log In</h1>
-    <p class="muted">Use the sample account after importing the database.</p>
+    <p class="muted">Log in to view vehicles, maintenance history, and account tools.</p>
     <?php if ($error): ?><div class="alert alert-error"><?= htmlspecialchars($error, ENT_QUOTES, 'UTF-8') ?></div><?php endif; ?>
     <form method="post" action="login.php" novalidate>
         <label for="email">Email</label>
@@ -43,6 +45,7 @@ require 'includes/header.php';
         <input id="password" name="password" type="password" autocomplete="current-password" required>
         <p><button class="btn" type="submit">Log In</button></p>
     </form>
-    <p class="muted"><strong>Week 2 test account:</strong> student@example.com / Student123!</p>
+    <p class="muted">Need an account? <a href="register.php">Register here</a>.</p>
+    <p class="muted"><strong>Test account:</strong> student@example.com / Student123!</p>
 </section>
 <?php require 'includes/footer.php'; ?>

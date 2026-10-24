@@ -75,3 +75,17 @@ th { background: #eef3f7; }
     nav { width: 100%; }
     .hero { padding: 28px 22px; }
 }
+
+/* Week 3 / Phase 2 additions */
+.help-text { color: var(--muted); font-size: .9rem; margin: 6px 0 0; }
+.search-card { margin-bottom: 24px; }
+.search-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: end; }
+.search-row .btn { height: 42px; }
+.results-heading { margin-top: 26px; }
+.account-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.button-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn-secondary { background: #5f6f7f; }
+.btn-secondary:hover { background: #485766; }
+@media (max-width: 600px) {
+    .search-row { grid-template-columns: 1fr; }
+}
