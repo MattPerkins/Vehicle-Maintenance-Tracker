@@ -1,4 +1,5 @@
 <?php
+// Displays maintenance history for vehicles owned by the signed-in user.
 require 'includes/auth.php';
 require_login();
 require 'config/db.php';
@@ -20,7 +21,7 @@ $records = $stmt->fetchAll();
 $pageTitle = 'Maintenance | Vehicle Maintenance Tracker';
 require 'includes/header.php';
 ?>
-<div class="page-heading"><div><h1>Maintenance History</h1><p class="muted">Service records for vehicles on your account.</p></div></div>
+<div class="page-heading"><div><h1>Maintenance History</h1><p class="muted">Service records for vehicles on your account.</p></div><a class="btn" href="search.php">Search / Manage Records</a></div>
 <div class="table-wrap"><table>
 <thead><tr><th>Date</th><th>Vehicle</th><th>Service</th><th>Mileage</th><th>Cost</th><th>Location</th><th>Notes</th></tr></thead>
 <tbody>

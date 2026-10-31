@@ -8,7 +8,7 @@ $pageTitle = 'Home | Vehicle Maintenance Tracker';
 require 'includes/header.php';
 ?>
 <section class="hero">
-    <span class="badge">SDC480 Capstone Project - Phase 2</span>
+    <span class="badge">SDC480 Capstone Project - Phase 3</span>
     <h1>Keep vehicle maintenance records organized in one place.</h1>
     <p class="muted">The Vehicle Maintenance Tracker stores vehicle information, maintenance history, and user accounts in a simple PHP/MySQL application.</p>
     <p class="button-row"><a class="btn" href="login.php">Log In</a> <a class="btn btn-secondary" href="register.php">Create Account</a></p>

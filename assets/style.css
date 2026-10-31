@@ -89,3 +89,13 @@ th { background: #eef3f7; }
 @media (max-width: 600px) {
     .search-row { grid-template-columns: 1fr; }
 }
+
+/* Week 4 / Phase 3 additions */
+.form-section { margin: 20px 0 24px; }
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px 16px; }
+.actions { display: flex; gap: 7px; align-items: center; flex-wrap: wrap; min-width: 130px; }
+.actions form { margin: 0; }
+.btn-small { padding: 6px 10px; font-size: .86rem; }
+.btn-danger { background: var(--danger); }
+.btn-danger:hover { background: #742020; }
+textarea { resize: vertical; }

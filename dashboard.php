@@ -20,6 +20,6 @@ require 'includes/header.php';
 <section class="grid">
     <div class="card"><div class="stat"><?= $vehicleCount ?></div><strong>Vehicles</strong><p><a href="vehicles.php">View vehicle list</a></p></div>
     <div class="card"><div class="stat"><?= $maintenanceCount ?></div><strong>Maintenance Records</strong><p><a href="maintenance.php">View maintenance history</a></p></div>
-    <div class="card"><h3>Phase 2 Status</h3><p>Search, registration, password changes, password complexity, and additional security checks are now included.</p><p><a href="search.php">Try the search feature</a></p></div>
+    <div class="card"><h3>Phase 3 Status</h3><p>Search, registration, password security, and full add/edit/delete management for vehicles and maintenance records are now included.</p><p><a href="search.php">Search and manage records</a></p></div>
 </section>
 <?php require 'includes/footer.php'; ?>
